@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CV Adrián Luque Díaz</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --ink:#16202a; --muted:#5b6670; --accent:#5b4cf0; --dark:#1c1b22; --line:#e3e8ec; }
+  html, body { width:210mm; height:297mm; }
+  body { font-family: "DM Sans", Arial, sans-serif; color: var(--ink); font-size: 10.2pt; line-height: 1.5; display:grid; grid-template-columns: 68mm 1fr; background:#fff; }
+  aside { background: var(--dark); color:#d7dee3; padding: 12mm 7mm 10mm; }
+  main { padding: 9mm 10mm 6mm 9mm; }
+  .photo { width: 34mm; height: 34mm; border-radius: 50%; overflow:hidden; margin: 0 auto 5mm; border: 3px solid #8b80ff; }
+  .photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.45) translateY(4%); }
+  h1 { font-family: "Space Grotesk", sans-serif; font-size: 27pt; line-height: 1; letter-spacing: -.5px; }
+  .role { font-family: "Space Grotesk", sans-serif; display:inline-block; background: var(--accent); color:#fff; padding: .6mm 3mm; border-radius: 1.5mm; font-size: 10.5pt; margin: 2mm 0 3mm; }
+  .summary { color: var(--muted); margin-bottom: 5mm; }
+  h2 { font-family: "Space Grotesk", sans-serif; letter-spacing: -.2px; font-size: 12.5pt; color: var(--ink); border-bottom: 1.5px solid var(--line); padding-bottom: 1mm; margin: 5.5mm 0 3mm; }
+  h2 span { display:none; }
+  aside h2 { color:#fff; border-color:#33313d; }
+  aside ul { list-style:none; }
+  aside li { margin-bottom: 1.6mm; }
+  .contact li { display:flex; gap:2mm; align-items:flex-start; word-break: break-word; }
+  .contact b { color: var(--accent); font-weight:600; min-width: 4mm; }
+  .tags { display:flex; flex-wrap:wrap; gap:1.4mm; }
+  .tags span { border:1px solid #3d3a4a; border-radius: 3px; padding: .4mm 1.8mm; font-size: 8.2pt; }
+  .lang li { display:flex; justify-content:space-between; }
+  .lang em { color:#a19dae; font-style:normal; }
+  .job { margin-bottom: 4.5mm; }
+  .job-head { display:flex; justify-content:space-between; align-items:baseline; gap:3mm; }
+  .job h3 { font-size: 10pt; font-weight:600; }
+  .date { font-size: 8.3pt; color: var(--muted); white-space:nowrap; }
+  .company { color: var(--accent); font-weight:600; font-size: 8.6pt; text-transform: uppercase; letter-spacing:.6px; }
+  .company i { color: var(--muted); font-style:normal; text-transform:none; letter-spacing:0; font-weight:400; }
+  .job ul { margin: 1mm 0 0 4mm; }
+  .job li { margin-bottom: .5mm; }
+  .edu { display:grid; grid-template-columns: 20mm 1fr; gap: .4mm 3mm; margin-bottom: 2mm; }
+  .edu .date { padding-top:.4mm; }
+  .edu b { font-weight:600; }
+  .edu small { display:block; color: var(--muted); font-size: 8.4pt; }
+  .now { color: var(--accent); font-weight:600; }
+  .ref { margin: 1mm 0 0 4mm; font-size: 8.6pt; color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<aside>
+  <div class="photo"><img src="assets/foto.png" alt=""></div>
+  <h2>Contacto</h2>
+  <ul class="contact">
+    <li><b>@</b>adriluquediaz@gmail.com</li>
+    <li><b>☎</b>(+34) 627 09 03 73</li>
+    <li><b>⌖</b>Santa Coloma de Gramenet, Barcelona, 08921</li>
+    <li><b>in</b>linkedin.com/in/adrián-luque-díaz-b5075a357</li>
+  </ul>
+  <h2>Tecnologías</h2>
+  <div class="tags">
+    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>jQuery</span><span>GSAP</span><span>PHP</span><span>Java</span><span>SQL / MySQL</span><span>Python</span><span>WordPress</span><span>Elementor</span><span>WPML</span><span>Figma</span><span>Git</span><span>GitHub</span><span>SiteGround</span><span>Redes</span>
+  </div>
+  <h2>Competencias</h2>
+  <ul>
+    <li>Trabajo en equipo</li>
+    <li>Atención al cliente</li>
+    <li>Adaptación al cambio</li>
+    <li>Resolución de problemas</li>
+    <li>Organización y disciplina</li>
+    <li>Aprendizaje autónomo</li>
+  </ul>
+  <h2>Idiomas</h2>
+  <ul class="lang">
+    <li>Catalán <em>Nativo</em></li>
+    <li>Castellano <em>Nativo</em></li>
+    <li>Inglés <em>B2</em></li>
+  </ul>
+  <h2>Otros datos</h2>
+  <ul>
+    <li>Carnet de moto</li>
+    <li>Vehículo propio</li>
+  </ul>
+</aside>
+<main>
+  <h1>Adrián Luque Díaz</h1>
+  <div class="role">Desarrollador Web Junior</div>
+  <p class="summary">Técnico Superior en Desarrollo de Aplicaciones Web y Técnico en Sistemas Microinformáticos y Redes, especializándome ahora en Inteligencia Artificial y Big Data. Apasionado por la informática y siempre curioso con cada novedad tecnológica; aprendo rápido y disfruto trabajando en equipo.</p>
+
+  <h2><span>01</span>Experiencia</h2>
+  <div class="job">
+    <div class="job-head"><h3>Desarrollador Web</h3><span class="date">Sept. 2025 — Actualidad</span></div>
+    <div class="company">MadStudio <i>· Contrato a media jornada, tras las prácticas de DAW</i></div>
+    <ul>
+      <li>Paso de diseños de Figma a WordPress en los proyectos asignados por el responsable del estudio.</li>
+      <li>Maquetación responsive con Elementor, tema propio en PHP y jQuery, y animaciones con GSAP.</li>
+      <li>Webs multidioma con WPML, migraciones y gestión del hosting en SiteGround.</li>
+      <li>SEO y control de versiones con Git y GitHub.</li>
+    </ul>
+    <div class="ref">★ Carta de recomendación de MadStudio disponible bajo petición.</div>
+  </div>
+  <div class="job">
+    <div class="job-head"><h3>Equipo de restaurante</h3><span class="date">Mar. 2025 — Sept. 2025</span></div>
+    <div class="company">McDonald's <i>· Jornada parcial, compaginado con el CFGS DAW</i></div>
+    <ul>
+      <li>Atención al cliente en un entorno de ritmo alto y trabajo por turnos.</li>
+      <li>Coordinación en equipo, organización del tiempo y resolución de incidencias.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <div class="job-head"><h3>Soporte IT y formación</h3><span class="date">Abr. 2024 — Jul. 2024</span></div>
+    <div class="company">LGC Ingegneria e Architettura <i>· Italia · Prácticas SMX</i></div>
+    <ul>
+      <li>Gestión y mantenimiento de las herramientas informáticas de la empresa.</li>
+      <li>Creación de formaciones básicas de software para usuarios sin experiencia.</li>
+    </ul>
+  </div>
+  <div class="job">
+    <div class="job-head"><h3>Analista de mercado</h3><span class="date">Sept. 2023 — Feb. 2024</span></div>
+    <div class="company">Cellservice Group SL <i>· Prácticas</i></div>
+    <ul>
+      <li>Análisis de la competencia y del mercado laboral para la toma de decisiones.</li>
+    </ul>
+  </div>
+
+  <h2><span>02</span>Educación</h2>
+  <div class="edu"><span class="date">2026 — 2027</span><div><b>CE en Inteligencia Artificial y Big Data</b> <span class="now">· En curso</span><small>Institut TIC de Barcelona</small></div></div>
+  <div class="edu"><span class="date">2024 — 2026</span><div><b>CFGS Desarrollo de Aplicaciones Web (DAW)</b><small>Institut Puig Castellar</small></div></div>
+  <div class="edu"><span class="date">2022 — 2024</span><div><b>CFGM Sistemas Microinformáticos y Redes (SMX)</b><small>Institut Puig Castellar</small></div></div>
+  <div class="edu"><span class="date">2018 — 2022</span><div><b>Educación Secundaria Obligatoria</b><small>Institut Numancia</small></div></div>
+</main>
+</body>
+</html>
