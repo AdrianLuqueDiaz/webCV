@@ -4,9 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Adrián Luque Díaz — Desarrollador Web</title>
-<meta name="description" content="CV de Adrián Luque Díaz, desarrollador web junior en Barcelona.">
+<meta name="description" content="CV de Adrián Luque Díaz, desarrollador web en Barcelona: WordPress, PHP, JavaScript y Java. Experiencia, tecnologías y formación.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Adrián Luque Díaz — Desarrollador Web">
+<meta property="og:description" content="Experiencia, tecnologías y formación. CV descargable en PDF.">
+<meta property="og:image" content="https://adrianluquediaz.github.io/webCV/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:url" content="https://adrianluquediaz.github.io/webCV/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/foto.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
 <style>
   :root { --bg:#17161c; --side:#1e1d25; --card:#22212a; --card2:#29273328; --text:#e9e7ef; --muted:#a29fae; --line:#2f2d38; --accent:#a99cff; --accent2:#ff9f7a; }
   * { box-sizing: border-box; margin:0; padding:0; }
@@ -17,14 +27,14 @@
                 radial-gradient(500px 400px at 100% 100%, rgba(255,159,122,.07), transparent 70%); }
   a { color: inherit; }
   .layout { display:grid; grid-template-columns: 300px 1fr; min-height:100vh; }
-  .side { position: sticky; top:0; height:100vh; background: var(--side); padding: 40px 28px; display:flex; flex-direction:column; gap: 18px; border-right: 1px solid var(--line); }
-  .pic { width: 108px; height: 108px; border-radius: 50%; overflow:hidden; background:#a3a3a3; outline: 2px solid var(--accent); outline-offset: 4px; }
+  .side { position: sticky; top:0; height:100vh; overflow-y:auto; scrollbar-width:thin; scrollbar-color: var(--line) transparent; background: var(--side); padding: 40px 28px; display:flex; flex-direction:column; gap: 18px; border-right: 1px solid var(--line); }
+  .pic { flex-shrink:0; width: 108px; height: 108px; border-radius: 50%; overflow:hidden; background:#a3a3a3; outline: 2px solid var(--accent); outline-offset: 4px; }
   .pic img { width:100%; height:100%; object-fit:cover; transform: scale(1.45) translateY(4%); display:block; }
   .side h1 { font-size: 26px; line-height:1.2; }
   .side .role { color: var(--accent); font-weight:500; }
   .side .loc { color: var(--muted); font-size: 14.5px; }
   .status { display:inline-flex; align-items:center; gap:8px; font-size: 13.5px; color: #b9f3d0; background: rgba(74,222,128,.08); border:1px solid rgba(74,222,128,.25); padding: 3px 10px; border-radius: 999px; width:fit-content; }
-  .status::before { content:""; width:7px; height:7px; border-radius:50%; background:#4ade80; animation: pulse 2s infinite; }
+  .status::before { content:""; flex-shrink:0; width:7px; height:7px; border-radius:50%; background:#4ade80; animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:.35 } }
   .side nav { display:flex; flex-direction:column; gap: 2px; margin-top: 4px; }
   .side nav a { text-decoration:none; color: var(--muted); padding: 5px 10px; border-radius: 6px; transition: background .15s, color .15s; }
@@ -35,12 +45,14 @@
   .btn { display:block; text-align:center; background: var(--accent); color:#17161c !important; text-decoration:none; font-weight:700; padding: 10px; border-radius: 8px; margin-top: 8px; transition: transform .15s, box-shadow .15s; }
   .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(169,156,255,.3); }
   main { padding: 56px 40px 64px; max-width: 880px; width:100%; margin: 0 auto; }
-  section { margin-bottom: 56px; scroll-margin-top: 24px; opacity:0; transform: translateY(12px); transition: opacity .5s, transform .5s; }
-  section.in { opacity:1; transform:none; }
+  section { margin-bottom: 56px; scroll-margin-top: 24px; }
+  .js section { opacity:0; transform: translateY(12px); transition: opacity .5s, transform .5s; }
+  .js section.in { opacity:1; transform:none; }
   h2 { font-size: 22px; margin-bottom: 18px; display:flex; align-items:center; gap: 10px; }
   h2::before { content:""; width: 4px; height: 20px; border-radius: 2px; background: linear-gradient(var(--accent), var(--accent2)); }
   .lead { color: #c9c6d3; font-size: 17px; }
   .lead + .lead { margin-top: 12px; }
+  .lead b { color: var(--text); font-weight: 500; }
   .job { position:relative; padding: 18px 20px; margin-bottom: 12px; background: var(--card); border-radius: 12px; border-left: 3px solid var(--line); transition: border-color .2s; }
   .job:hover { border-left-color: var(--accent); }
   .job.current { border-left-color: var(--accent); }
@@ -49,9 +61,17 @@
   .job .date { color: var(--muted); font-size: 14px; }
   .job .org { color: var(--accent); font-size: 15px; }
   .job .org span { color: var(--muted); }
+  .job .org a { text-decoration:none; } .job .org a:hover { text-decoration: underline; }
+  a.ms { color: var(--accent); text-decoration:none; } a.ms:hover { text-decoration: underline; }
   .job ul { margin: 8px 0 0 18px; color: #d3d0dc; }
   .job li { margin-bottom: 3px; }
   .job li::marker { color: var(--accent2); }
+  .job p { color: #d3d0dc; margin-top: 8px; }
+  .job .tags { margin-top: 12px; }
+  .job .more { display:flex; flex-wrap:wrap; gap: 6px 16px; margin-top: 12px; font-size: 14.5px; }
+  .job .more a { color: var(--accent); text-decoration:none; font-weight:500; }
+  .job .more a:hover { text-decoration: underline; }
+  .job .more span { color: var(--muted); font-size: 13.5px; }
   .rec { background: linear-gradient(135deg, rgba(169,156,255,.14), rgba(255,159,122,.08)); border: 1px solid rgba(169,156,255,.3); border-radius: 14px; padding: 22px 24px; display:flex; gap: 18px; align-items:flex-start; }
   .rec .q { font-size: 44px; line-height: .8; color: var(--accent); font-family: Georgia, serif; }
   .rec h3 { font-size: 18px; margin-bottom: 4px; }
@@ -65,6 +85,8 @@
   .card p { color: var(--muted); font-size: 14.5px; }
   .card .yrs { color: var(--muted); font-size: 13.5px; }
   .card .now { color: var(--accent2); font-size: 13px; margin-left: 4px; }
+  .card .soon-label { color: var(--accent2); font-size: 13px; margin: 10px 0 6px; }
+  .tags.soon span { background: transparent; border: 1px dashed rgba(169,156,255,.35); color: var(--muted); }
   .tags { display:flex; flex-wrap:wrap; gap: 6px; }
   .tags span { font-size: 13.5px; padding: 2px 10px; border-radius: 6px; background: rgba(169,156,255,.1); color: #d6d0ff; }
   .rows div { display:flex; justify-content:space-between; padding: 4px 0; }
@@ -72,12 +94,22 @@
   footer { color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 18px; }
   @media (max-width: 860px) {
     .layout { grid-template-columns: 1fr; }
-    .side { position: static; height:auto; padding: 28px 16px; border-right:none; border-bottom: 1px solid var(--line); }
-    .side nav { flex-direction:row; flex-wrap:wrap; gap: 2px 6px; }
-    main { padding: 32px 16px 56px; }
+    .side { position: static; height:auto; overflow:visible; padding: 18px 16px 14px; border-right:none; border-bottom: 1px solid var(--line);
+            display:grid; grid-template-columns: auto 1fr; gap: 4px 16px; align-items:center; }
+    .pic { width: 72px; height: 72px; outline-offset: 3px; grid-row: span 2; }
+    .side h1 { font-size: 21px; }
+    .side .role { font-size: 15px; }
+    .side .loc { font-size: 13.5px; }
+    .status { grid-column: 2; font-size: 12.5px; padding: 1px 9px; }
+    .side nav { grid-column: 1 / -1; flex-direction:row; flex-wrap:nowrap; overflow-x:auto; gap: 4px; margin: 10px -16px 0; padding: 0 16px; scrollbar-width:none; }
+    .side nav::-webkit-scrollbar { display:none; }
+    .side nav a { white-space:nowrap; flex-shrink:0; font-size: 14.5px; background: rgba(255,255,255,.03); }
+    .links { grid-column: 1 / -1; flex-direction:row; flex-wrap:wrap; align-items:center; gap: 4px 14px; margin-top: 8px; font-size: 14px; }
+    .btn { margin: 0 0 0 auto; padding: 6px 14px; }
+    main { padding: 28px 16px 56px; }
     .rec { flex-direction: column; gap: 8px; }
   }
-  @media (prefers-reduced-motion: reduce) { section { opacity:1; transform:none; transition:none; } .status::before { animation:none; } }
+  @media (prefers-reduced-motion: reduce) { .js section { opacity:1; transform:none; transition:none; } .status::before { animation:none; } }
 </style>
 </head>
 <body>
@@ -93,6 +125,7 @@
     <nav aria-label="Secciones">
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#experiencia">Experiencia</a>
+      <a href="#proyecto">Proyecto</a>
       <a href="#recomendacion">Recomendación</a>
       <a href="#tecnologias">Tecnologías</a>
       <a href="#formacion">Formación</a>
@@ -100,7 +133,7 @@
     </nav>
     <div class="links">
       <a href="mailto:adriluquediaz@gmail.com">adriluquediaz@gmail.com</a>
-      <a href="https://www.linkedin.com/in/adri%C3%A1n-luque-d%C3%ADaz-b5075a357" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/adrianluquediaz" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/AdrianLuqueDiaz" target="_blank" rel="noopener">GitHub</a>
       <a class="btn" href="assets/CV_Adrian_Luque_Diaz.pdf" download>Descargar CV</a>
     </div>
@@ -109,21 +142,24 @@
   <main>
     <section id="sobre-mi">
       <h2>Sobre mí</h2>
-      <p class="lead">Me apasiona la informática y siempre tengo curiosidad por los nuevos cambios en la tecnología. Esa curiosidad me llevó de los sistemas y las redes en el Institut Puig Castellar al desarrollo web con el Grado Superior en DAW, y ahora a especializarme en Inteligencia Artificial y Big Data en el Institut TIC de Barcelona, mientras trabajo como desarrollador web en MadStudio.</p>
-      <p class="lead">Me motiva aprender y afrontar nuevos desafíos. Disfruto formándome tanto por mi cuenta como en equipo, y siempre busco conocimientos de otras áreas para ampliar lo que sé hacer. Suelo marcarme objetivos pequeños para seguir creciendo poco a poco, como profesional y como persona.</p>
-      <p class="lead">He compaginado estudios y trabajo, y hacer prácticas en una empresa de Italia me enseñó a adaptarme rápido a entornos nuevos. Valoro trabajar con gente y crear un ambiente colaborativo, donde el equipo rinde más.</p>
+      <p class="lead">Soy desarrollador web a media jornada en <a class="ms" href="https://madstudio.es/" target="_blank" rel="noopener">Madstudio</a>, donde me contrataron después de las prácticas de DAW. Desarrollo webs para clientes en WordPress a partir de diseños en Figma, tanto nuevas como ya existentes, y me encargo de su mantenimiento, actualizaciones y nuevas secciones.</p>
+      <p class="lead">Empecé por los sistemas y las redes con el CFGM SMX y unas prácticas de soporte IT en Italia, donde aprendí a adaptarme rápido y a explicar la tecnología a gente sin experiencia. Después di el salto al desarrollo con el CFGS DAW y ahora me estoy especializando en Inteligencia Artificial y Big Data en el Institut TIC de Barcelona.</p>
+      <p class="lead">La informática me ha gustado desde siempre: me gusta entender cómo funcionan las cosas por dentro y aprender por mi cuenta, y suelo marcarme pequeños retos para seguir mejorando. También valoro mucho trabajar en equipo, en un ambiente donde nos ayudemos entre todos.</p>
+      <p class="lead">Estoy abierto a nuevas oportunidades.</p>
     </section>
 
     <section id="experiencia">
       <h2>Experiencia</h2>
       <div class="job current">
         <div class="top"><h3>Desarrollador Web</h3><span class="date">Sept. 2025 — actualidad</span></div>
-        <div class="org">MadStudio <span>· contrato a media jornada (incorporado tras las prácticas de DAW)</span></div>
+        <div class="org"><a href="https://madstudio.es/" target="_blank" rel="noopener">Madstudio</a> <span>· contrato a media jornada (incorporado tras las prácticas de DAW)</span></div>
         <ul>
-          <li>Desarrollo de los proyectos web que me asigna el responsable del estudio, pasando los diseños de Figma a WordPress.</li>
-          <li>Maquetación responsive con Elementor y personalización del tema propio con PHP y jQuery.</li>
-          <li>Animaciones con GSAP y webs multidioma con WPML.</li>
-          <li>Migraciones de WordPress, gestión del hosting en SiteGround y SEO.</li>
+          <li>Desarrollo de webs corporativas en WordPress a partir de diseños en Figma, tanto webs nuevas como evolución de webs existentes.</li>
+          <li>Mantenimiento, actualizaciones y nuevas secciones en webs de clientes en producción.</li>
+          <li>Maquetación responsive con Elementor, tema propio en PHP y animaciones con GSAP.</li>
+          <li>JavaScript y jQuery a medida (event listeners, manipulación del DOM) para resolver lo que Elementor no permite.</li>
+          <li>Desarrollo en Java para tareas del estudio.</li>
+          <li>Webs multidioma con WPML, migraciones y gestión del hosting en SiteGround; SEO.</li>
           <li>Control de versiones con Git y GitHub.</li>
         </ul>
       </div>
@@ -151,13 +187,27 @@
       </div>
     </section>
 
+    <section id="proyecto">
+      <h2>Proyecto</h2>
+      <div class="job">
+        <div class="top"><h3>BitHub Arcade</h3><span class="date">Proyecto final del CFGS DAW</span></div>
+        <p>Web de minijuegos de programación con registro de usuarios, saldo, estadísticas y rol de administrador. Frontend en Vue con Vite y API REST en Spring Boot con base de datos MySQL.</p>
+        <div class="tags"><span>Vue.js</span><span>Vite</span><span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>MySQL</span></div>
+        <div class="more">
+          <a href="https://bithub-arcade.vercel.app" target="_blank" rel="noopener">Ver la web →</a>
+          <a href="https://github.com/AdrianLuqueDiaz/Proyecto-DAW" target="_blank" rel="noopener">Código en GitHub →</a>
+          <span>El servidor gratuito puede tardar unos segundos en arrancar.</span>
+        </div>
+      </div>
+    </section>
+
     <section id="recomendacion">
       <h2>Recomendación</h2>
       <div class="rec">
         <div class="q" aria-hidden="true">“</div>
         <div>
-          <h3>Carta de recomendación de MadStudio</h3>
-          <p>Tras mis prácticas y mi etapa contratado como desarrollador web, MadStudio me avala con una carta de recomendación sobre mi trabajo en el estudio.</p>
+          <h3>Carta de recomendación de <a class="ms" href="https://madstudio.es/" target="_blank" rel="noopener">Madstudio</a></h3>
+          <p>Tras mis prácticas y mi etapa contratado como desarrollador web, <a class="ms" href="https://madstudio.es/" target="_blank" rel="noopener">Madstudio</a> me avala con una carta de recomendación sobre mi trabajo en el estudio.</p>
           <div class="who"><b>Disponible bajo petición</b> · <a href="mailto:adriluquediaz@gmail.com?subject=Carta%20de%20recomendaci%C3%B3n">pídemela por email</a></div>
         </div>
       </div>
@@ -166,10 +216,12 @@
     <section id="tecnologias">
       <h2>Tecnologías</h2>
       <div class="grid">
-        <div class="card"><h3>Frontend</h3><div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>jQuery</span><span>GSAP</span><span>Bootstrap</span></div></div>
-        <div class="card"><h3>Backend y datos</h3><div class="tags"><span>PHP</span><span>Java</span><span>SQL</span><span>MySQL</span><span>Python</span></div></div>
+        <div class="card"><h3>Frontend</h3><div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>jQuery</span><span>GSAP</span><span>Vue.js</span><span>Bootstrap</span></div></div>
+        <div class="card"><h3>Backend</h3><div class="tags"><span>PHP</span><span>Java</span><span>Spring Boot</span><span>API REST</span></div></div>
         <div class="card"><h3>WordPress</h3><div class="tags"><span>WordPress</span><span>Elementor</span><span>WPML</span><span>Migraciones</span><span>SEO</span></div></div>
-        <div class="card"><h3>Herramientas y sistemas</h3><div class="tags"><span>Figma</span><span>Git</span><span>GitHub</span><span>SiteGround</span><span>Redes</span></div></div>
+        <div class="card"><h3>Bases de datos y datos</h3><div class="tags"><span>SQL</span><span>MySQL</span></div><p class="soon-label">En formación</p><div class="tags soon"><span>Python</span><span>Power BI</span><span>Google Cloud</span></div></div>
+        <div class="card"><h3>Sistemas</h3><div class="tags"><span>Windows</span><span>Linux</span><span>Redes</span><span>Hardware</span></div></div>
+        <div class="card"><h3>Herramientas</h3><div class="tags"><span>Figma</span><span>Git</span><span>GitHub</span><span>SiteGround</span></div></div>
       </div>
     </section>
 
@@ -179,7 +231,6 @@
         <div class="card"><span class="yrs">2026 — 2027</span><span class="now">· en curso</span><h3>CE en Inteligencia Artificial y Big Data</h3><p>Institut TIC de Barcelona</p></div>
         <div class="card"><span class="yrs">2024 — 2026</span><h3>CFGS Desarrollo de Aplicaciones Web</h3><p>Institut Puig Castellar</p></div>
         <div class="card"><span class="yrs">2022 — 2024</span><h3>CFGM Sistemas Microinformáticos y Redes</h3><p>Institut Puig Castellar</p></div>
-        <div class="card"><span class="yrs">2018 — 2022</span><h3>ESO</h3><p>Institut Numancia</p></div>
       </div>
     </section>
 
@@ -210,5 +261,7 @@
   const reveal = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); reveal.unobserve(e.target); } }), { threshold: .08 });
   sections.forEach(s => { spy.observe(s); reveal.observe(s); });
 </script>
+<!-- GoatCounter (estadísticas sin cookies): sustituir CODIGO por el código de goatcounter.com -->
+<!-- <script data-goatcounter="https://CODIGO.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script> -->
 </body>
 </html>
